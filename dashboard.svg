@@ -1,0 +1,368 @@
+<svg fill="none" viewBox="0 0 900 620" width="900" height="620" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .web-body {
+          width: 900px;
+          height: 620px;
+          background: radial-gradient(circle at 15% 15%, #3b040c 0%, #170205 45%, #080102 100%);
+          border: 1px solid #ff1e4244;
+          border-radius: 16px;
+          padding: 24px;
+          color: #f5e6e8;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+          overflow: hidden;
+          box-shadow: inset 0 0 80px rgba(255, 0, 43, 0.12);
+        }
+
+        .bg-grid {
+          position: absolute;
+          inset: 0;
+          background-image: 
+            linear-gradient(to right, rgba(255, 20, 50, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 20, 50, 0.05) 1px, transparent 1px);
+          background-size: 32px 32px;
+          pointer-events: none;
+        }
+
+        .glow-orb {
+          position: absolute;
+          top: -80px;
+          right: -80px;
+          width: 260px;
+          height: 260px;
+          background: radial-gradient(circle, rgba(255, 15, 55, 0.28) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+
+        .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: rgba(20, 3, 7, 0.85);
+          border: 1px solid rgba(255, 42, 75, 0.25);
+          border-radius: 10px;
+          padding: 10px 16px;
+          z-index: 2;
+        }
+
+        .win-dots {
+          display: flex;
+          gap: 8px;
+        }
+
+        .dot {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+        }
+        .dot.red { background: #ff1e42; box-shadow: 0 0 8px #ff1e42; }
+        .dot.dark1 { background: #5c0a18; }
+        .dot.dark2 { background: #38050d; }
+
+        .url-bar {
+          background: rgba(10, 1, 3, 0.9);
+          border: 1px solid rgba(255, 30, 66, 0.2);
+          padding: 4px 28px;
+          border-radius: 6px;
+          font-family: 'Courier New', monospace;
+          font-size: 12px;
+          color: #ff6b81;
+          letter-spacing: 0.5px;
+        }
+
+        .status-badge {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 11px;
+          font-weight: 600;
+          color: #ff4769;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .pulse {
+          width: 8px;
+          height: 8px;
+          background: #ff1e42;
+          border-radius: 50%;
+          box-shadow: 0 0 10px #ff1e42;
+          animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.35; }
+        }
+
+        .hero {
+          background: linear-gradient(135deg, rgba(45, 4, 12, 0.75) 0%, rgba(18, 2, 6, 0.85) 100%);
+          border: 1px solid rgba(255, 30, 66, 0.35);
+          border-left: 4px solid #ff1e42;
+          border-radius: 12px;
+          padding: 20px 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 2;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-title {
+          font-size: 28px;
+          font-weight: 800;
+          letter-spacing: 0.5px;
+          color: #ffffff;
+          text-shadow: 0 0 18px rgba(255, 30, 66, 0.65);
+        }
+
+        .hero-title span {
+          color: #ff1e42;
+        }
+
+        .hero-sub {
+          margin-top: 6px;
+          font-size: 14px;
+          color: #d9a7b0;
+          font-weight: 500;
+        }
+
+        .hero-tag {
+          background: rgba(255, 30, 66, 0.14);
+          border: 1px solid #ff1e42;
+          color: #ff8fa0;
+          padding: 8px 14px;
+          border-radius: 8px;
+          font-family: 'Courier New', monospace;
+          font-size: 12px;
+          font-weight: bold;
+          box-shadow: 0 0 14px rgba(255, 30, 66, 0.25);
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          z-index: 2;
+        }
+
+        .card {
+          background: rgba(22, 3, 7, 0.78);
+          border: 1px solid rgba(255, 30, 66, 0.22);
+          border-radius: 12px;
+          padding: 18px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        .card-title {
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          color: #ff2a4b;
+          border-bottom: 1px solid rgba(255, 42, 75, 0.2);
+          padding-bottom: 8px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .spec-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          font-size: 13px;
+        }
+
+        .spec-row {
+          display: flex;
+          justify-content: space-between;
+          background: rgba(255, 20, 50, 0.05);
+          padding: 6px 10px;
+          border-radius: 6px;
+          border-left: 2px solid #ff1e42;
+        }
+
+        .spec-label {
+          color: #b88a92;
+          font-family: 'Courier New', monospace;
+          font-size: 12px;
+        }
+
+        .spec-val {
+          color: #fff;
+          font-weight: 600;
+        }
+
+        .badge-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 7px;
+        }
+
+        .pill {
+          background: rgba(255, 20, 55, 0.12);
+          border: 1px solid rgba(255, 42, 75, 0.45);
+          color: #ffd1d8;
+          padding: 5px 11px;
+          border-radius: 6px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .pill.highlight {
+          background: rgba(255, 20, 55, 0.28);
+          border-color: #ff1e42;
+          color: #ffffff;
+          box-shadow: 0 0 10px rgba(255, 30, 66, 0.3);
+        }
+
+        .footer-bar {
+          background: rgba(18, 2, 5, 0.9);
+          border: 1px solid rgba(255, 30, 66, 0.3);
+          border-radius: 10px;
+          padding: 14px 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 2;
+        }
+
+        .quote {
+          font-style: italic;
+          font-size: 13.5px;
+          color: #f2c4cb;
+        }
+
+        .quote span {
+          color: #ff1e42;
+          font-style: normal;
+          font-weight: 700;
+          margin-left: 6px;
+        }
+
+        .loc {
+          font-family: 'Courier New', monospace;
+          font-size: 11px;
+          color: #a66d77;
+        }
+      </style>
+
+      <div class="web-body">
+        <div class="bg-grid"></div>
+        <div class="glow-orb"></div>
+
+        <!-- BROWSER TOP BAR -->
+        <div class="navbar">
+          <div class="win-dots">
+            <div class="dot red"></div>
+            <div class="dot dark1"></div>
+            <div class="dot dark2"></div>
+          </div>
+        </div>
+
+        <!-- HERO HEADER -->
+        <div class="hero">
+          <div>
+            <div class="hero-title">VXMPET <span>//</span> HYMMEL ♱</div>
+            <div class="hero-sub">20 • Software Engineer • Low-Level Systems &amp; Custom Engines</div>
+          </div>
+          <div class="hero-tag">Actually GOATED</div>
+        </div>
+
+        <!-- BENTO CONTENT GRID -->
+        <div class="grid">
+          <!-- LEFT CARD: HARDWARE & RIG -->
+          <div class="card">
+            <div class="card-title">
+              <span>🩸 WORKSTATION // RIG</span>
+              <span>AM5</span>
+            </div>
+            <div class="spec-list">
+              <div class="spec-row">
+                <span class="spec-label">CPU</span>
+                <span class="spec-val">AMD Ryzen 7 7800X3D</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">GPU</span>
+                <span class="spec-val">GIGABYTE Radeon RX 9070 XT OC ICE</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">RAM</span>
+                <span class="spec-val">Patriot Viper 32GB DDR5-6000 CL30</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">BOARD</span>
+                <span class="spec-val">GIGABYTE AORUS B850 Elite ICE</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">OS / ENV</span>
+                <span class="spec-val">Arch Linux • Windows 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT CARD: TECH STACK & PROJECTS -->
+          <div class="card">
+            <div class="card-title">
+              <span>⚡ CORE STACK &amp; ARCHITECTURE</span>
+              <span>DEV</span>
+            </div>
+            <div class="badge-wrap">
+              <span class="pill highlight">Go</span>
+              <span class="pill highlight">C / C++</span>
+              <span class="pill highlight">PHP</span>
+              <span class="pill highlight">JavaScript</span>
+              <span class="pill highlight">SQL / MariaDB</span>
+              <span class="pill highlight">C#</span>
+              <span class="pill highlight">Java</span>
+              <span class="pill highlight">Python</span>
+              <span class="pill highlight">Lua</span>
+              <span class="pill">SQLite</span>
+              <span class="pill">Linux</span>
+              <span class="pill">Git</span>
+              <span class="pill">ERP / Sage 100</span>
+            </div>
+
+            <div class="card-title" style="margin-top: 6px;">
+              <span>♱ FEATURED BUILDS</span>
+              <span>OSS</span>
+            </div>
+            <div class="spec-list">
+              <div class="spec-row">
+                <span class="spec-label">LonaDB / VxmpSQL (soon)</span>
+                <span class="spec-val">Custom DB Engines</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">VxmpFramework (soon)</span>
+                <span class="spec-val">Core Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER QUOTE -->
+        <div class="footer-bar">
+          <div class="quote">
+            "Guck, der Pisser wechselt Freunde, ich bleib' immer mit mei'm Team" <span>— absent</span>
+          </div>
+          <div class="loc">BW, GERMANY // 2026</div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
